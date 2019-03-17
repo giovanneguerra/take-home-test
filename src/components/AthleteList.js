@@ -4,10 +4,16 @@ import { fetchAthletes, fetchCaptures } from "../actions";
 import _ from "lodash";
 import moment from "moment";
 
+const POLL_INTERVAL = 300;
+
 class AthleteList extends React.Component {
   componentDidMount() {
     this.props.fetchAthletes();
-    window.setInterval(this.props.fetchCaptures, 300);
+    window.setInterval(() => {
+      if (window.isTabActive) {
+        this.props.fetchCaptures();
+      }
+    }, POLL_INTERVAL);
   }
   getReaderIdByOrder(readerOrder) {
     let readers = this.props.readers || [];
@@ -46,6 +52,14 @@ class AthleteList extends React.Component {
     return <tbody className="athlete__list">{this.renderList()}</tbody>;
   }
 }
+
+window.onfocus = function() {
+  window.isTabActive = true;
+};
+
+window.onblur = function() {
+  window.isTabActive = false;
+};
 
 const mapStateToProps = state => {
   return {
