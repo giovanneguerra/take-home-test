@@ -1,0 +1,3 @@
+export const FETCH_ATHLETES = "FETCH_ATHLETES";
+export const FETCH_READERS = "FETCH_READERS";
+export const FETCH_CAPTURES = "FETCH_CAPTURES";
