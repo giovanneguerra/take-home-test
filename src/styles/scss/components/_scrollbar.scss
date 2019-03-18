@@ -1,0 +1,21 @@
+/* width */
+::-webkit-scrollbar {
+  width: 0.7em;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $third-color;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $fourth-color;
+  height: 3rem;
+  border-radius: 5rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: darken($color: $fourth-color, $amount: 10%);
+}

@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700");
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateX(3rem); }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box; }
+
+body {
+  font-family: "Montserrat", sans-serif; }
+
+.table {
+  background-color: #747371;
+  margin: auto;
+  padding: 0;
+  max-width: 50%;
+  animation: moveInBottom 0.8s ease-out 0.75s;
+  animation-fill-mode: backwards;
+  border-radius: 1rem;
+  border-spacing: 0;
+  border-collapse: collapse; }
+  .table__header {
+    display: table-caption;
+    font-size: 2rem;
+    padding: 2rem;
+    margin: 0;
+    text-align: left;
+    background-color: #a9c5da;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem; }
+    .table__header .header__item {
+      width: 100%;
+      padding: 1rem; }
+  .table__list {
+    display: block;
+    height: 30rem;
+    width: 70rem;
+    overflow: auto;
+    font-size: 1.6rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem; }
+    .table__list .item:nth-child(odd) {
+      background-color: #5a5958; }
+    .table__list .item:nth-child(even) {
+      background-color: #8e8d8a; }
+    .table__list .item__text {
+      padding: 2rem;
+      width: 70%; }
+
+body {
+  background-color: #28282d;
+  color: #fefefe;
+  margin: auto; }
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  height: 100vh; }
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.7em; }
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f3efe6; }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #f06f4f;
+  height: 3rem;
+  border-radius: 5rem; }
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ec4920; }

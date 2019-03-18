@@ -40,18 +40,24 @@ class AthleteList extends React.Component {
     });
     return _.map(finalCorridor, athlete => {
       return (
-        <tr>
-          <td>{athlete.name}</td>
-          <td>{this.getTimestampByReader(athlete.id, 0)}</td>
-          <td>{this.getTimestampByReader(athlete.id, 1)}</td>
+        <tr className="item" key={athlete.id}>
+          <td className="item__text item__text--name">{athlete.name}</td>
+          <td className="item__text">
+            {this.getTimestampByReader(athlete.id, 0)}
+          </td>
+          <td className="item__text">
+            {this.getTimestampByReader(athlete.id, 1)}
+          </td>
         </tr>
       );
     });
   }
   render() {
-    return <tbody className="athlete__list">{this.renderList()}</tbody>;
+    return <tbody className="table__list">{this.renderList()}</tbody>;
   }
 }
+
+window.isTabActive = true;
 
 window.onfocus = function() {
   window.isTabActive = true;

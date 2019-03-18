@@ -5,7 +5,7 @@ import ReaderHeader from "./ReaderHeader";
 class App extends Component {
   render() {
     return (
-      <table>
+      <table className="table">
         <ReaderHeader />
         <AthleteList />
       </table>

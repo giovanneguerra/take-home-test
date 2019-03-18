@@ -11,19 +11,19 @@ class ReaderHeader extends React.Component {
   renderList() {
     if (_.size(this.props.readers) > 0) {
       return (
-        <th>
-          <td>Name</td>
-          <td>{this.props.readers[0].name}</td>
-          <td>{this.props.readers[1].name}</td>
-        </th>
+        <tr className="header">
+          <th className="header__item">Name</th>
+          <th className="header__item">{this.props.readers[0].name}</th>
+          <th className="header__item">{this.props.readers[1].name}</th>
+        </tr>
       );
     } else {
-      return <th />;
+      return <tr />;
     }
   }
 
   render() {
-    return <thead className="reader__list">{this.renderList()}</thead>;
+    return <thead className="table__header">{this.renderList()}</thead>;
   }
 }
 

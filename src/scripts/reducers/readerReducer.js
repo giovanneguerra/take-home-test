@@ -1,4 +1,3 @@
-import _ from "lodash";
 import { FETCH_READERS } from "../actions/types";
 
 export default (state = [], action) => {
