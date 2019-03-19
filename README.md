@@ -39,14 +39,14 @@ Using jQuery is discouraged
 2 - After installation, verify if you have node and yarn installed on your machine.
     if not:
     https://nodejs.org/en/download/
-
     https://yarnpkg.com/lang/en/docs/install/#windows-stable
 
-3 - Get the packages with yarn
+3 - Get the packages with yarn:
     yarn install
 
-4 - Run the application with yarn
+4 - Run the application with yarn:
     yarn start
 
 ### WARNING: Check if you're running the flask and python back-end to have all the data on the table, otherwise, it will not work!!!!!!
+#### PS: This application only worked with python 3.6.5 on windows.
     
