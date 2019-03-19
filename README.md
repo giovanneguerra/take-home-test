@@ -22,14 +22,13 @@ Test developed by Giovanne Guerra for Mooncascade.
 
 5 - If the browser window has been deactivated meantime and the user brings it to foreground again, then, depending on the technical solution, there might be situation where there is a “gap” in the information that has been received from the server (because the communication with the server didn’t happen and the information was not sent). In that case, think / propose, how it could be handled in the user interface so, that user would understand it adequately and won’t get confused.
 
-======================================
 ## Front-end requirements
-======================================
+
 Option 1: React
     -Use Redux or MobX (or similar) for state management
     -For the CSS, use your preferred toolset (Sass, inline styling, CSS-modules, styled-components, etc)
     -Write JavaScript using ES6
-Using jQuery is discouraged
+#Using jQuery is discouraged
 
 # How to start the application
 
