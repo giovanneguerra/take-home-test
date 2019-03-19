@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import { fetchAthletes, fetchCaptures } from "../actions";
 import _ from "lodash";
-import moment from "moment";
 
 const POLL_INTERVAL = 300;
 
@@ -29,25 +28,33 @@ class AthleteList extends React.Component {
       this.props.captures,
       ({ athlete, reader_id }) => athlete.id === id && reader_id === readerId
     );
-    let capture = _.maxBy(captures, ({ captured }) => moment(captured));
-    return capture
-      ? moment(capture.timestamp).format("HH:mm:ss.SSS")
-      : undefined;
+    let capture = _.maxBy(captures, ({ captured }) => captured);
+    return capture ? capture.timestamp.format("HH:mm:ss.SSS") : undefined;
   }
   renderList() {
     let finalCorridor = _.filter(this.props.athletes, ({ id }) => {
       return !!this.getTimestampByReader(id, 0);
     });
-    return _.map(finalCorridor, athlete => {
+    let defineTimestamp = _.map(finalCorridor, athlete => {
+      return Object.assign(
+        {},
+        athlete,
+        {
+          first: this.getTimestampByReader(athlete.id, 0),
+          second: this.getTimestampByReader(athlete.id, 1)
+        }
+      );
+    })
+    let sorted = _.sortBy(defineTimestamp, [
+      athleteObj => athleteObj.second,
+      athleteObj => athleteObj.first
+    ]);
+    return _.map(sorted, athlete => {
       return (
         <tr className="item" key={athlete.id}>
           <td className="item__text item__text--name">{athlete.name}</td>
-          <td className="item__text">
-            {this.getTimestampByReader(athlete.id, 0)}
-          </td>
-          <td className="item__text">
-            {this.getTimestampByReader(athlete.id, 1)}
-          </td>
+          <td className="item__text">{athlete.first}</td>
+          <td className="item__text">{athlete.second}</td>
         </tr>
       );
     });

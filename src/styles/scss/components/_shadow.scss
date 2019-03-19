@@ -1,0 +1,18 @@
+.shadow {
+  position: relative;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    top: 2px;
+    left: 15px;
+    right: 15px;
+    z-index: -1;
+    border-radius: 100px/30px;
+    -webkit-box-shadow: 0 0 30px 2px #479f41;
+    -moz-box-shadow: 0 0 30px 2px #479f41;
+    box-shadow: 0 0 30px 2px #479f41;
+  }
+}

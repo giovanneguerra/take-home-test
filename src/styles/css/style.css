@@ -48,7 +48,7 @@ body {
       width: 100%;
       padding: 1rem; }
   .table__list {
-    display: block;
+    display: inline-block;
     height: 30rem;
     width: 70rem;
     overflow: auto;
