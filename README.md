@@ -48,5 +48,5 @@ Using jQuery is discouraged
 4 - Run the application with yarn
     yarn start
 
-WARNING: Check if you're running the flask and python back-end to have all the data on the table, otherwise, it will not work!!!!!!
+### WARNING: Check if you're running the flask and python back-end to have all the data on the table, otherwise, it will not work!!!!!!
     
