@@ -1,68 +1,59 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# take-home-test
 
-## Available Scripts
+Test developed by Giovanne Guerra for Mooncascade.
 
-In the project directory, you can run:
+############################################################
+## The task
+------------------------------------------------------------
+# Implement the following software:
+############################################################
 
-### `npm start`
+1 - Server/service, that receives the timing information in real-time. Protocol is not known at the moment - just design it yourself in the way you wish it. You can’t use the real timing system for testing - create a test-client that sends some dummy data instead.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+2 - Web user interface, that displays in real-time in table form the athletes who have entered the finish corridor in the following way:
+    - When athlete enters the finish corridor, a corresponding row is added to the table, where the athlete’s start number and name is displayed.
+    - When the athlete crosses the finish line, the finish time is added to the athlete’s row.
+    -Design the UI in the way, that the athlete’s who entered to the finish corridor last, would be visible to the user without any effort from the user - the older rows/records just move out of the visible area, sequentially.
+    -Demonstrate the functioning of the system with the test-client that sends the dummy data.
+    -Try to design the user interface in the way, that user don’t have to put any effort or do any additional moves in order to see something (for example, no need to “refresh” or scroll the page or do any other annoyances), so that he/she would understand adequately what is happening and won’t get confused.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+=====================================
+# Non-mandatory additional tasks:
+=====================================
 
-### `npm test`
+3 - Make sure that the athletes who cross the finish-line would be displayed in the correct order - for example, if athlete A enters the finish corridor before athlete B, then they are displayed in the order of entering the corridor. But if athlete B passes the athlete A in the finish corridor (i.e. the athlete B crosses the finish line before the athlete A), then adjust the displayed order accordingly. Demonstrate it with the dummy test-client.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4 - Do so that the web user interface would interact with the server in real-time only, when the browser window is in foreground / active. If user brings some other application window into foreground, then the web user interface has to stop the communication with the server. I the user activates the web browser window again, the real-time communication with the server must be resumed.
 
-### `npm run build`
+5 - If the browser window has been deactivated meantime and the user brings it to foreground again, then, depending on the technical solution, there might be situation where there is a “gap” in the information that has been received from the server (because the communication with the server didn’t happen and the information was not sent). In that case, think / propose, how it could be handled in the user interface so, that user would understand it adequately and won’t get confused.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+======================================
+# Front-end requirements
+======================================
+Option 1: React
+    -Use Redux or MobX (or similar) for state management
+    -For the CSS, use your preferred toolset (Sass, inline styling, CSS-modules, styled-components, etc)
+    -Write JavaScript using ES6
+Using jQuery is discouraged
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+###########################################################################################################
+## How to start the application
+###########################################################################################################
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1 -  First get this project on the repository, typying:
+    git clone https://github.com/giovanneguerra/take-home-test.git
 
-### `npm run eject`
+2 - After installation, verify if you have node and yarn installed on your machine.
+    if not:
+    https://nodejs.org/en/download/
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+    https://yarnpkg.com/lang/en/docs/install/#windows-stable
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3 - Get the packages with yarn
+    yarn install
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+4 - Run the application with yarn
+    yarn start
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+WARNING: Check if you're running the flask and python back-end to have all the data on the table, otherwise, it will not work!!!!!!
+    
