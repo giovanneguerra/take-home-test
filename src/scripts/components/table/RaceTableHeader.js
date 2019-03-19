@@ -4,7 +4,7 @@ import _ from 'lodash';
 
 import { fetchReaders } from '../../actions';
 
-class ReaderHeader extends React.Component {
+class RaceTableHeader extends React.Component {
   componentDidMount() {
     this.props.fetchReaders();
   }
@@ -34,7 +34,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  { fetchReaders }
-)(ReaderHeader);
+export default connect(mapStateToProps,{ fetchReaders })(RaceTableHeader);
