@@ -1,7 +1,8 @@
-import React from "react";
-import { connect } from "react-redux";
-import { fetchReaders } from "../actions";
-import _ from "lodash";
+import React from 'react';
+import { connect } from 'react-redux';
+import _ from 'lodash';
+
+import { fetchReaders } from '../../actions';
 
 class ReaderHeader extends React.Component {
   componentDidMount() {

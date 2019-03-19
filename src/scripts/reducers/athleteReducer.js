@@ -1,4 +1,4 @@
-import { FETCH_ATHLETES } from "../actions/types";
+import { FETCH_ATHLETES } from '../actions/types';
 
 export default (state = [], action) => {
   if (action.type === FETCH_ATHLETES) {

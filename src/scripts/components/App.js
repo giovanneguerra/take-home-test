@@ -1,14 +1,14 @@
-import React, { Component } from "react";
-import AthleteList from "./AthleteList";
-import ReaderHeader from "./ReaderHeader";
+import React, { Component } from 'react';
+import RaceTable from './table/RaceTable';
+import Footer from './footer/Footer';
 
 class App extends Component {
   render() {
     return (
-      <table className="table">
-        <ReaderHeader />
-        <AthleteList />
-      </table>
+      <div className="container">
+        <RaceTable />
+        <Footer />
+      </div>
     );
   }
 }

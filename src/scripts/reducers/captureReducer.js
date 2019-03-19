@@ -1,6 +1,7 @@
-import _ from "lodash";
-import { FETCH_CAPTURES } from "../actions/types";
-import moment from "moment";
+import _ from 'lodash';
+import moment from 'moment';
+
+import { FETCH_CAPTURES } from '../actions/types';
 
 const toMoment = capture => {
   return Object.assign({}, capture, {

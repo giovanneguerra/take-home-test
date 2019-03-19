@@ -5,7 +5,6 @@ import { Provider } from "react-redux";
 import reduxThunk from "redux-thunk";
 
 import "./styles/css/style.css";
-import "./scripts/utils/tableHeader";
 import reducers from "./scripts/reducers";
 import App from "./scripts/components/App";
 

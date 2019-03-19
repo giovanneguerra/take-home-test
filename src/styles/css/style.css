@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700");
-@keyframes moveInBottom {
+@keyframes moveInLeft {
   0% {
     opacity: 0;
     transform: translateX(3rem); }
@@ -8,6 +8,16 @@
   100% {
     opacity: 1;
     transform: translateX(0); } }
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  80% {
+    transform: translateY(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
 
 *,
 *::after,
@@ -25,12 +35,23 @@ body {
 body {
   font-family: "Montserrat", sans-serif; }
 
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding: 3rem;
+  font-size: 1.2rem;
+  width: 100%;
+  text-align: center;
+  animation: moveInBottom 0.8s ease-out 0.75s;
+  animation-fill-mode: backwards; }
+
 .table {
   background-color: #747371;
   margin: auto;
   padding: 0;
   max-width: 50%;
-  animation: moveInBottom 0.8s ease-out 0.75s;
+  animation: moveInLeft 0.8s ease-out 0.75s;
   animation-fill-mode: backwards;
   border-radius: 1rem;
   border-spacing: 0;
@@ -63,24 +84,14 @@ body {
       padding: 2rem;
       width: 70%; }
 
-body {
-  background-color: #28282d;
-  color: #fefefe;
-  margin: auto; }
-
-#root {
-  display: flex;
-  align-items: center;
-  justify-items: center;
-  height: 100vh; }
-
 /* width */
 ::-webkit-scrollbar {
   width: 0.7em; }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f3efe6; }
+  background: #f3efe6;
+  border-bottom-right-radius: 5rem; }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
@@ -91,3 +102,28 @@ body {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #ec4920; }
+
+.shadow {
+  position: relative;
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.3), 0 0 2rem rgba(0, 0, 0, 0.1) inset; }
+  .shadow:before, .shadow:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    top: .2rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    z-index: -1;
+    border-radius: 10rem/3rem;
+    box-shadow: 0 0 3rem 0.2rem #000; }
+
+body {
+  background-color: #28282d;
+  color: #fefefe;
+  margin: auto; }
+
+#root .container {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  height: 100vh; }

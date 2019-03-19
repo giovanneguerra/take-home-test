@@ -1,14 +1,13 @@
-@import "utils/functions";
-@import "utils/mixins";
 @import "utils/variables";
 
 @import "base/animations";
 @import "base/base";
 @import "base/typography";
-@import "base/utilities";
 
+@import "layout/footer";
 @import "layout/table";
 
-@import "themes/main";
-
 @import "components/scrollbar";
+@import "components/shadow";
+
+@import "themes/main";

@@ -1,5 +1,5 @@
-import api from "../apis/TakeHomeAPI";
-import { FETCH_ATHLETES, FETCH_READERS, FETCH_CAPTURES } from "./types";
+import api from '../apis/TakeHomeAPI';
+import { FETCH_ATHLETES, FETCH_READERS, FETCH_CAPTURES } from './types';
 
 export const fetchAthletes = () => async dispatch => {
   const response = await api.get("/athletes");

@@ -1,7 +1,8 @@
-import React from "react";
-import { connect } from "react-redux";
-import { fetchAthletes, fetchCaptures } from "../actions";
-import _ from "lodash";
+import React from 'react';
+import { connect } from 'react-redux';
+import _ from 'lodash';
+
+import { fetchAthletes, fetchCaptures } from '../../actions';
 
 const POLL_INTERVAL = 300;
 
